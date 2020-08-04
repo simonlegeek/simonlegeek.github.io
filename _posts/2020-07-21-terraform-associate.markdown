@@ -5,6 +5,12 @@ date:   2020-07-21 00:00:00 +0000
 categories: terraform
 ---
 
+<p align="center">
+    <img src="{{site.baseurl}}/assets/img/terraform-associate-logo.png" width="200"/>
+</p>
+
+<br/><br/>
+
 There it is, **I am now a Certified Terraform Associate**. I decided to kick off this brand new blog with an opinionated review
 of this certification and the required preparation. 
 
@@ -79,9 +85,3 @@ As the head of a Cloud Ops team, I would value this certification on an applican
 [A Guide to HashiCorp Certified Terraform Associate](https://medium.com/@sanoojm/a-giude-to-hashicorp-certified-terraform-associate-cd9b21699139)
 
 [HashiCorp Certified: Terraform Associate Practice Exam 2020](https://www.udemy.com/course/terraform-associate-practice-exam)
-
-<br/><br/>
-<br/><br/>
-<p align="center">
-    <img src="{{site.baseurl}}/assets/img/terraform-associate-logo.png" width="200"/>
-</p>
