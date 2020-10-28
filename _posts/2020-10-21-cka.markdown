@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "Certified Kubernetes Administrator"
+date:   2020-10-21 00:00:00 +0000
+categories: kubernetes
+---
+
+<p align="center">
+    <img src="{{site.baseurl}}/assets/img/cka.png" width="200"/>
+</p>
+
+<br/><br/>
+
+With more and more of our workloads getting deployed into Kubernetes,
+I felt it was the right time to measure my experience and skills against the CNCF certifications.
+So there it is, I am now a **Certified Kubernetes Administrator (CKA)**. For those who plan on going down the
+same road, let me share with you a few tips and some information about the CKA.
+
+### Preparation
+
+Well appart from a year of using Kubernetes in production,
+I chose a Udemy course (Certified Kubernetes Administrator (CKA) with Practice Tests from Mumshad Mannambeth) to prepare to this exam.
+I can say it was indeed enough. The lab platform based on Katacoda is pretty dope and the exercises were well designed. 
+That being said, my job make me spend a lot of time reading blog posts and documentation from the official Kubernetes website,
+so it was most definitely an advantage.
+
+### The Certified Kubernetes Administrator exam
+
+So this exam is task based. This means there are no multiple-choices or true/false questions.
+You get an environment with multiple clusters you can connect to and a list of tasks to complete.
+With the newest version of the exam that came out in September, you have 2 hours to complete 15 to 25 tasks.
+The passing score is 66%, which makes the certificate pretty accessible to anybody in my opinion.
+
+This certification aims to validate if you can deploy and operate the Kubernetes control-plane and will
+also measure if you can deploy the usual Kubernetes objects such as deployments, pods and services.
+Since that certification targets mostly the control-plane, it leads me to think that if you plan on using a
+managed version of Kubernetes such as AKS/EKS or GKE, this will not bring you as much value as the CKAD.
+
+It willdefinitely help you understand how the components work together, but if you don't plan on deploying your own cluster,
+you should probably go for the CKAD first.
+The Linux Foundation will release later this fall the CKS (Certified Kubernetes Security sepcialist) certification and
+the CKA will be a prerequisite to obtain that certificat, so it might be an additional incentive to target it even if you don't plan on managing 
+Kubernetes control-plane yourself. 
+
+During the exam, you are allow to access the official Kubernetes documentation site, the Kubernetes blog and the Kubernetes
+GitHub repository
+
+### On exam day
+
+This exam is scheduled through an online proctoring service called Examity. The scheduling process was easy. Connecting with
+the proctor was also quite simple. You have an hour to answer about 60 questions (multiple choices, true/false). 
+You can skip questions and come back later. You can mark a question for review.
+
+It took me about 20 minutes to make a first quick pass at all the questions. I marked a few ones for review. 
+Few seconds after answering the last one, the Zoom meeting (that Examity use to monitor you during the exam)
+disconnected. When this happens, the exam is paused, but the timer does not stop.
+I started working with Examity support using the chat function. Long story short, it took 45 minutes to get back on the Zoom meeting. 
+
+The moment I got back on track, the exam automatically ended
+(timer went all the way down to 0 and my proctor didn't pause it even though the support guy I was in contact with assured me they would).
+Fortunately for me, I still passed with flying colors and got my badge. 
+In that situation, I decided to not make a fuss about the lost time and went my merry way. 
+If someone from HashiCorp ever read this... Examity... not a big fan!!
+
+### Things I learned
+
+Even though a lot of the content of the exam was knowledge I already had, I've learned a few interesting things that I wanted to mention
+
+- You can speed-up significantly a `plan` or `apply` operation by using the `-refresh=false` flag to use the current state as-is. 
+*While this could cause you to rely on a state that drifted from the real resources configuration, 
+it has the benefit of accelerating the feedback loop a lot when implementing/testing a new part of your configuration.*
+
+- To save the execution plan of a destroy operation, you need to use `terraform plan -destroy -out plan.out` not the `terraform destroy` command
+
+- One should use the provisioner feature as a last resort for a lot of very logical reasons. 
+The one I retain was that it makes Terraform a lot less portable as it creates external dependencies 
+(like the availability of some local binaries or a requirement for direct connectivity).
+
+- It is recommended to use a minimum version `>=` provider constraint for shared child modules. For root modules, the recommendation is to set both the lower and higher bounds `~>`
+).
+
+- You can locally cache provider binaries to speed up the `init` workflow and save on space (versus downloading them each time for each configuration)
+
+- HashiCorp Vault looks like a pretty awesome secret management platform. I will definitely need to set up some lab in the short term to experiment.
+
+
+### Conclusion
+
+To sum up, I'd say it was a nice experience overall. The exam will most definitely not be a challenge if you have any real Terraform experience under your belt.
+The exam cost is only 75$USD so it is an easy target on all fronts. Probably more at the "foundational" level of certification rather than at the "associate" one (in my opinion).
+As the head of a Cloud Ops team, I would value this certification on an applicant's resume.
+
+### Helpful reference
+
+[HashiCorp Infrastructure Automation Certification](https://www.hashicorp.com/certification/terraform-associate/)
+
+[Exam Review - Terraform Associate Certification](https://learn.hashicorp.com/terraform/certification/terraform-associate-review)
+
+[A Guide to HashiCorp Certified Terraform Associate](https://medium.com/@sanoojm/a-giude-to-hashicorp-certified-terraform-associate-cd9b21699139)
+
+[HashiCorp Certified: Terraform Associate Practice Exam 2020](https://www.udemy.com/course/terraform-associate-practice-exam)
