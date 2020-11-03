@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "Certified Kubernetes Administrator"
+date:   2020-10-21 00:00:00 +0000
+categories: kubernetes, certifications, exams
+---
+
+<p align="center">
+    <img src="{{site.baseurl}}/assets/img/cka.png" width="400"/>
+</p>
+
+<br/><br/>
+
+With more and more of our workloads getting deployed into Kubernetes,
+I felt it was the right time to measure my experience and skills against the CNCF certifications.
+So there it is, I am now a **Certified Kubernetes Administrator (CKA)**. For those who plan on going down the
+same road, let me share with you a few tips and some info about the CKA.
+
+### Preparation
+
+Well, apart from almost two years of using Kubernetes in production,
+I chose a Udemy course (Certified Kubernetes Administrator (CKA) with Practice Tests from Mumshad Mannambeth) to prepare for this exam.
+I can say it was indeed enough. The lab platform based on Katacoda is pretty dope and the exercises were well designed. 
+That being said, my job has me spend a lot of time reading blog posts and documentation from the official Kubernetes website,
+so it was most definitely an advantage.
+
+### The Certified Kubernetes Administrator exam
+
+So this exam is task based. This means there are no multiple choices or true/false questions.
+You get an environment with multiple clusters you can connect to and a list of tasks to complete.
+With the newest version of the exam that came out in September, you have 2 hours to complete 15 to 25 tasks.
+The passing score is 66%, which makes the certification pretty accessible to anybody, in my opinion.
+
+This certification aims to validate if you can deploy and operate the Kubernetes control plane and will
+also measure if you can deploy the usual Kubernetes objects such as deployments, pods and services.
+Since that certification targets mostly the control plane, I think that if you plan on using a
+managed version of Kubernetes such as AKS/EKS or GKE, this will probably not bring you as much value as CKA's sibling, the CKAD.
+
+It will definitely help you understand how the components work together, but if you don't plan on deploying your own cluster,
+you should probably go for the CKAD first.
+The Linux Foundation will release later this fall the CKS (Certified Kubernetes Security specialist) certification and
+the CKA will be a prerequisite to obtain that certification, so it might be an additional incentive to target it even if you don't plan to manage the Kubernetes control plane yourself. 
+
+During the exam, you are allowed to access the official Kubernetes documentation site, the Kubernetes blog and the Kubernetes
+GitHub repository.
+
+### On exam day
+
+The exam is scheduled through an online proctoring service called PSI. As with all of those online proctored exams, 
+you WILL need to clean up your desk (no nothing, rien... nada) except a single monitor or your laptop. You will be allowed only two tabs
+in your Google Chrome browser (the only one supported for the exam). 
+
+The experience was pretty good and the exam platform was flawless, in my opinion. 
+
+### Tips for the exam
+
+Here are my tips for all the fellow exam takers:
+
+1. **Manage your time:** The major challenge of this certification is the time (or the lack of time).
+Allow yourself a maximum number of minutes for each question. If you reach that maximum skip that question. A lot of the questions are
+actually pretty simple and can be completed with a few simple commands. You need to make sure to have the time to hit those low-hanging fruits.
+2. **Know your ETCD:** Make sure to know how to backup and restore ETCD. FYI, the ETCD restore command is not available in the official K8s
+documentation, it one of the rare things you will need to memorize.
+3. **Vim:** Get acquainted to Vim. There is probably alternative like nano or emacs on the exams nodes too, but I can confirm Vim was available. 
+4. **Be imperative:** Know your imperative command to either directly deploy resources or generate base yaml configurations that you can then edit
+to fit the question. 
+5. **YAML sucks:** Yep, I said it. Good chance you will hit an indentation error at some point or you will declare a map instead of a list at another. Know you YAML guys... That's another good incentive for using imperative commands. 
+6. **Make a curated list of favourites:** Get a folder of preselected favourites in your browser. I bookmarked all the resources example 
+that I could not generate using imperative commands and I used this list during the exam. It will be much faster than using the search feature during your exam. 
+7. **Practice... practice, practice, practice.** It is a hands-on exam, you need to know your sh** and you know how to type fast. You can enable an alias and autocompletion for kubectl at the beginning of the exam if it helps you.
+
+
+### Conclusion
+
+To sum up, I'd say it was a nice experience overall. The exam is priced at 300$USD, but you can find discount coupons everywhere to drop almost 40$USD to 50$USD from the original price. You also get a free retake if you fail (which is pretty cool in my opinion). I will definitely take the CKAD before the end of 2020. The hands-on experience makes the exam almost fun and definitely challenging. 
+
+As the lead of a Cloud Ops team, I would value this certification on an applicant's resume probably more than any MCQ based cert. Kudos Linux Foundation/CNCF
+
+### Helpful reference
+
+[Certified Kubernetes Administrator (CKA) with Practice Tests](https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/)
+
+[Certified Kubernetes Administrator (CKA)](https://www.cncf.io/certification/cka/)
+
+[My curated list of bookmarks for the exam - Save and import in Chrome]({{site.baseurl}}/assets/documents/cka_bookmarks.html)
